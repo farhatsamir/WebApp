@@ -1,0 +1,123 @@
+﻿@page
+@model FinalPojects.Pages.Admin.Medicines.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<style>
+    #pgmain {
+        margin-top: -760px !important;
+        height: 730px;
+        overflow-y: auto;
+    }
+
+    .control-label {
+        font-weight: bold;
+    }
+</style>
+
+<partial name="sidenav" />
+
+<main id="pgmain">
+
+<h1>Edit</h1>
+
+<h4>Medicine</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Medicine.Id" />
+            <div class="form-group">
+                <label asp-for="Medicine.ProductType" class="control-label"></label>
+                <input asp-for="Medicine.ProductType" class="form-control" />
+                <span asp-validation-for="Medicine.ProductType" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Medicine.ScientificName" class="control-label"></label>
+                <input asp-for="Medicine.ScientificName" class="form-control" />
+                <span asp-validation-for="Medicine.ScientificName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Medicine.TradName" class="control-label"></label>
+                <input asp-for="Medicine.TradName" class="form-control" />
+                <span asp-validation-for="Medicine.TradName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Medicine.PharmaceuticalForm" class="control-label"></label>
+                <input asp-for="Medicine.PharmaceuticalForm" class="form-control" />
+                <span asp-validation-for="Medicine.PharmaceuticalForm" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Medicine.HowToUse" class="control-label"></label>
+                <input asp-for="Medicine.HowToUse" class="form-control" />
+                <span asp-validation-for="Medicine.HowToUse" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Medicine.SizeUnit" class="control-label"></label>
+                <input asp-for="Medicine.SizeUnit" class="form-control" />
+                <span asp-validation-for="Medicine.SizeUnit" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Medicine.PackageType" class="control-label"></label>
+                <input asp-for="Medicine.PackageType" class="form-control" />
+                <span asp-validation-for="Medicine.PackageType" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Medicine.PackageSize" class="control-label"></label>
+                <input asp-for="Medicine.PackageSize" class="form-control" />
+                <span asp-validation-for="Medicine.PackageSize" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Medicine.LegalStatus" class="control-label"></label>
+                <input asp-for="Medicine.LegalStatus" class="form-control" />
+                <span asp-validation-for="Medicine.LegalStatus" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Medicine.DistributeArea" class="control-label"></label>
+                <input asp-for="Medicine.DistributeArea" class="form-control" />
+                <span asp-validation-for="Medicine.DistributeArea" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Medicine.PublicPrice" class="control-label"></label>
+                <input asp-for="Medicine.PublicPrice" class="form-control" />
+                <span asp-validation-for="Medicine.PublicPrice" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Medicine.StorageConditions" class="control-label"></label>
+                <input asp-for="Medicine.StorageConditions" class="form-control" />
+                <span asp-validation-for="Medicine.StorageConditions" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Medicine.MarktingCountry" class="control-label"></label>
+                <input asp-for="Medicine.MarktingCountry" class="form-control" />
+                <span asp-validation-for="Medicine.MarktingCountry" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Medicine.MainAgent" class="control-label"></label>
+                <input asp-for="Medicine.MainAgent" class="form-control" />
+                <span asp-validation-for="Medicine.MainAgent" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Medicine.DescriptionCode" class="control-label"></label>
+                <input asp-for="Medicine.DescriptionCode" class="form-control" />
+                <span asp-validation-for="Medicine.DescriptionCode" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+
+                </main>

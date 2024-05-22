@@ -1,0 +1,154 @@
+﻿@page
+@model FinalPojects.Pages.Admin.Medicines.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<style>
+    #pgmain {
+        margin-top: -760px !important;
+        height: 730px;
+        overflow-y:auto;
+    }
+</style>
+
+<partial name="sidenav" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+<main id="pgmain">
+<h1>المنتجات</h1>
+
+<p>
+    <a asp-page="Create">اضافة دواء جديد</a>
+</p>
+
+<form>
+    <p>
+        TradName : <input type="text" asp-for="SearchString" />
+        <input type="submit" value="Search" />
+    </p>
+</form>
+
+<table class="table table-bordered">
+    <thead>
+        <tr class="info">
+            <th>
+                @Html.DisplayNameFor(model => model.Medicine[0].ProductType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Medicine[0].ScientificName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Medicine[0].TradName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Medicine[0].PharmaceuticalForm)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Medicine[0].HowToUse)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Medicine[0].SizeUnit)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Medicine[0].PackageType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Medicine[0].PackageSize)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Medicine[0].LegalStatus)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Medicine[0].DistributeArea)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Medicine[0].PublicPrice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Medicine[0].StorageConditions)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Medicine[0].MarktingCountry)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Medicine[0].MainAgent)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Medicine[0].DescriptionCode)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Medicine) {
+            <tr class="success">
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ScientificName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TradName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PharmaceuticalForm)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HowToUse)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SizeUnit)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PackageType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PackageSize)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LegalStatus)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DistributeArea)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PublicPrice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StorageConditions)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MarktingCountry)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MainAgent)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DescriptionCode)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> 
+                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> 
+                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+
+<style>
+    h1 {
+        font-weight: bolder;
+        margin-left: 30px;
+    }
+
+    p{
+        font-weight:bold;
+        margin-left: 30px;
+    }
+</style>
+
+</main>
